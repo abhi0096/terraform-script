@@ -7,7 +7,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   
   # Enter your desired key pair name or remove this block if you don't want to use a key pair
-  key_name      = "test-pem" 
+#  key_name      = "test-pem" 
 
   tags = {
     Name = "my-ec2-instance"
