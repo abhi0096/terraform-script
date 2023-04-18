@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
+# provider "aws" {
+#   region = "us-east-1"
+# }
 
 resource "aws_instance" "example" {
   ami           = "ami-0aa2b7722dc1b5612" # Enter the AMI ID for your desired instance type
