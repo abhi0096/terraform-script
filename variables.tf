@@ -1,18 +1,12 @@
-# variable "ami" {
-#    type        = string
-#    description = "Ubuntu AMI ID in N. Virginia Region"
-#    default     = "ami-065deacbcaac64cf2"
-# }
+variable "aws_access_key" {
+  type = string
+}
 
-# variable "instance_type" {
-#    type        = string
-#    description = "Instance type"
-#    default     = "t2.micro"
-# }
+variable "aws_secret_key" {
+  type = string
+}
 
-# variable "name_tag" {
-#    type        = string
-#    description = "Name of the EC2 instance"
-#    default     = "My EC2 Instance"
-# }
-
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
