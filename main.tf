@@ -1,47 +1,15 @@
-# provider "aws" {
-#   region = "us-east-1"
-# }
+# # provider "aws" {
+# #   region = "us-east-1"
+# # }
 
-# resource "aws_instance" "example" {
-#   ami           = "ami-0aa2b7722dc1b5612" # replace with desired AMI ID
-#   instance_type = "t2.micro"             # replace with desired instance type
+# # resource "aws_instance" "example" {
+# #   ami           = "ami-0aa2b7722dc1b5612" # replace with desired AMI ID
+# #   instance_type = "t2.micro"             # replace with desired instance type
 
-#   tags = {
-#     Name = "example-instance"
-#   }
-# }
-
-terraform {
-        required_providers {
-        aws = {
-                source = "hashicorp/aws"
-                version = "~> 4.0"
-}
-}
-}
-
-provider "aws" {
-        region = "us-east-1"
-        access_key = "AKIAT5QV5NVCZXNB6277"
-        secret_key = "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"
-}
-
-resource "aws_instance" "s1" {
-  ami = "ami-0aa2b7722dc1b5612"
-  instance_type = "t2.micro"
-
-        tags = {
-           Name = "server1"
-}
-}
-
-
-
-
-
-
-
-
+# #   tags = {
+# #     Name = "example-instance"
+# #   }
+# # }
 
 # terraform {
 #         required_providers {
@@ -53,20 +21,52 @@ resource "aws_instance" "s1" {
 # }
 
 # provider "aws" {
-#   region = "us-east-1"
-#   access_key = "AKIAT5QV5NVC3NFXV5UL"
-#   secret_key = "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"
+#         region = "us-east-1"
+#         access_key = "AKIAT5QV5NVCZXNB6277"
+#         secret_key = "sYnqgHBlO4PgfIJI8k1PhH6anaQ9qEfovWK7qz64"
 # }
 
-# resource "aws_security_group" "example" {
-#   name_prefix = "example-"
-#   ingress {
-#     from_port   = 80
-#     to_port     = 443
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
+# resource "aws_instance" "s1" {
+#   ami = "ami-0aa2b7722dc1b5612"
+#   instance_type = "t2.micro"
+
+#         tags = {
+#            Name = "server1"
 # }
+# }
+
+
+
+
+
+
+
+
+
+terraform {
+        required_providers {
+        aws = {
+                source = "hashicorp/aws"
+                version = "~> 4.0"
+}
+}
+}
+
+provider "aws" {
+  region = "us-east-1"
+  access_key = "AKIAT5QV5NVC3NFXV5UL"
+  secret_key = "Pqj9qw39nX3xDdC+WBeQsH2MTNqGtd8nMsQqj23s"
+}
+
+resource "aws_security_group" "example" {
+  name_prefix = "example-"
+  ingress {
+    from_port   = 80
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
 # #resource "aws_security_group_rule" "example" {
 # #  type        = "ingress"
