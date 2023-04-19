@@ -1,5 +1,16 @@
+terraform {
+        required_providers {
+        aws = {
+                source = "hashicorp/aws"
+                version = "~> 4.0"
+}
+}
+}
+
 provider "aws" {
   region = "us-east-1"
+  access_key = "AKIAT5QV5NVC3NFXV5UL"
+  secret_key = "Pqj9qw39nX3xDdC+WBeQsH2MTNqGtd8nMsQqj23s"
 }
 
 resource "aws_security_group" "example" {
