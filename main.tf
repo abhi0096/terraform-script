@@ -1,15 +1,23 @@
-provider "aws" {
-  region = "us-east-1"
+terraform {
+        required_providers {
+        aws = {
+                source = "hashicorp/aws"
+                version = "~> 4.0"
+}
+}
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-0aa2b7722dc1b5612" # Enter the AMI ID for your desired instance type
-  instance_type = "t2.micro"
-  
-  # Enter your desired key pair name or remove this block if you don't want to use a key pair
-  #key_name      = "my-keypair" 
+provider "aws" {
+        region = "us-east-1"
+        access_key = "AKIAT5QV5NVCZAEFT47S"
+        secret_key = "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"
+}
 
-  tags = {
-    Name = "my-ec2-instance"
-  }
+resource "aws_instance" "s1" {
+  ami = "ami-0aa2b7722dc1b5612"
+  instance_type = "t2.micro"
+
+        tags = {
+           Name = "server1"
+}
 }
