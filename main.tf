@@ -1,3 +1,30 @@
+terraform {
+        required_providers {
+        aws = {
+                source = "hashicorp/aws"
+                version = "~> 4.0"
+                }
+        }
+}
+
+provider "aws" {
+        region = "us-east-1"
+        access_key = "AKIASDEDU7QLGG7UJF6R"
+        secret_key = "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"
+}
+
+resource "aws_instance" "s1" {
+  ami = "ami-0aa2b7722dc1b5612"
+  instance_type = "t2.micro"
+
+        tags = {
+           Name = "server1"
+}
+}
+
+
+
+
 # # provider "aws" {
 # #   region = "us-east-1"
 # # }
@@ -43,30 +70,30 @@
 
 
 
-terraform {
-        required_providers {
-        aws = {
-                source = "hashicorp/aws"
-                version = "~> 4.0"
-}
-}
-}
+# terraform {
+#         required_providers {
+#         aws = {
+#                 source = "hashicorp/aws"
+#                 version = "~> 4.0"
+# }
+# }
+# }
 
-provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIAT5QV5NVC3NFXV5UL"
-  secret_key = "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"
-}
+# provider "aws" {
+#   region = "us-east-1"
+#   access_key = "AKIAT5QV5NVC3NFXV5UL"
+#   secret_key = "Pqj9qw39nX3xDdC+WBeQsH2MTNqGtd8nMsQqj23s"
+# }
 
-resource "aws_security_group" "example" {
-  name_prefix = "example-"
-  ingress {
-    from_port   = 80
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+# resource "aws_security_group" "example" {
+#   name_prefix = "example-"
+#   ingress {
+#     from_port   = 80
+#     to_port     = 443
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+# }
 
 # #resource "aws_security_group_rule" "example" {
 # #  type        = "ingress"
